@@ -1,6 +1,7 @@
 # HMR Server
 
 A lightweight, framework-agnostic Hot Module Replacement (HMR) server built with TypeScript. Perfect for vanilla JavaScript projects and existing codebases that need real-time file watching and live reloading without the overhead of heavy frameworks.
+
 The purpose of this project is to help bring your legacy coding ways up to a modern standards!
 
 > ⚠️ **Work in Progress** - This project is currently under active development. See the progress sections below for current status.
