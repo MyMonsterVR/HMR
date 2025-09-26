@@ -1,15 +1,16 @@
 import dotenv from "dotenv";
+import path from "path";
 dotenv.config();
 
 class Config {
-    static PORT = process.env.PORT || 9270;
-    static HOST = "localhost";
+    PORT = process.env.PORT || 9270
+    HOST = "localhost"
 
-    static watchDirs: string[] = [
-        "./examples/**/*.html",
-        "./examples/**/*.js",
-        "./examples/**/*.css",
+    watchDirs: string[] = [
+        "./examples/**/*.*",
     ]
 
-    static excludedDirs: string[] = []
+    excludedDirs: string[] = []
 }
+
+export default Config
