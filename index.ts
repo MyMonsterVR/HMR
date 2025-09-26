@@ -4,6 +4,8 @@ import WebSocket from 'ws'
 import Config from "./lib/config"
 import {IncomingMessage} from "node:http";
 import { glob } from "glob";
+import HandlerRegistry from "./handlers/HandlerRegistry";
+import JavascriptHandler from "./handlers/JavascriptHandler";
 
 class Server {
     config: Config = new Config()
@@ -11,7 +13,12 @@ class Server {
     pingTimeout: NodeJS.Timeout | null = null
     watcher: FSWatcher|null = null
 
+    handlerRegistry: HandlerRegistry = new HandlerRegistry()
+
     // Load handlers
+    loadHandlers() {
+        new JavascriptHandler(this.config, this.handlerRegistry)
+    }
     
     // Watch for file changes
     async start() {
@@ -39,6 +46,8 @@ class Server {
             // handle file deletion
             console.log(chalk.red(`File ${filePath} has been removed`))
         });
+
+        this.loadHandlers()
     }
     
     // Open WS connection for client js
