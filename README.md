@@ -20,12 +20,12 @@ The purpose of this project is to help bring your legacy coding ways up to a mod
 ### ✅ Finished
 - [x] Basic TypeScript configuration
 - [x] Dependencies setup (chalk, chokidar, ws)
+- [x] File watching
+- [x] WebSocket server setup and client connections
 
 ### 🚧 To be done
 - [ ] Configuration loading system
 - [ ] File change handlers implementation
-- [ ] File watching with chokidar integration
-- [ ] WebSocket server setup and client connections
 - [ ] Real-time change streaming to connected clients
 - [ ] Client-side JavaScript library
 - [ ] Event system (file-changed, file-added, file-deleted)
